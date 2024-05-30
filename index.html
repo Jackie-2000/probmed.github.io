@@ -133,19 +133,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Large Language Models (LLMs) have garnered significant attention for their advancements 
-            in natural language processing, demonstrating unparalleled prowess in text comprehension 
-            and generation. Yet, the simultaneous generation of images with coherent textual narratives 
-            remains an evolving frontier. In response, we introduce an innovative interleaved 
-            vision-and-language generation technique anchored by the concept of "generative vokens", 
-            acting as the bridge for harmonized image-text outputs. 
-            Our approach is characterized by a distinctive two-staged training strategy focusing on 
-            description-free multimodal generation, where the training requires no comprehensive 
-            descriptions of images. To bolster model integrity, classifier-free guidance is incorporated, 
-            enhancing the effectiveness of vokens on image generation. 
-            Our model, <b>MiniGPT-5</b>, exhibits substantial improvement over the baseline Divter model 
-            on the MMDialog dataset and consistently delivers superior or comparable multimodal outputs 
-            in human evaluations on the VIST dataset, highlighting its efficacy across diverse benchmarks.
+            Large Multimodal Models (LMMs) have shown remarkable progress in the field of medical Visual Question Answering (Med-VQA), achieving high accuracy on existing benchmarks. However, their reliability under robust evaluation is questionable. This study reveals that state-of-the-art models, when subjected to simple probing evaluation, perform worse than random guessing on medical diagnosis questions. To address this critical evaluation problem, we introduce the <b>Probing Evaluation for Medical Diagnosis (ProbMed)</b> dataset to rigorously assess LMM performance in medical imaging through <p>probing evaluation</p> and <p>procedural diagnosis</p>. Particularly, probing evaluation features pairing original questions with negation questions with hallucinated attributes, while procedural diagnosis requires reasoning across various diagnostic dimensions for each image, including modality recognition, organ identification, clinical findings, abnormalities, and positional grounding. Our evaluation reveals that top-performing models like GPT-4V and Gemini Pro perform worse than random guessing on specialized diagnostic questions, indicating significant limitations in handling fine-grained medical inquiries. Besides, models like LLaVA-Med struggle even with more general questions, and results from CheXagent demonstrate the transferability of expertise across different modalities of the same organ, showing that specialized domain knowledge is still crucial for improving performance. This study underscores the urgent need for more robust evaluation to ensure the reliability of LMMs in critical fields like medical diagnosis, and current LMMs are still far from applicable to those fields.
           </p>
         </div>
       </div>
