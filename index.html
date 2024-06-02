@@ -283,6 +283,7 @@
     <div class="columns is-centered">
       <div class="column is-full has-text-centered content">
         <h2 class="title is-3" id="rq2"> How Reliable Are LMMs in Medical Diagnosis?</h2>
+        <!-- main -->
         <ul>
           <li><b>Performance across Diagnostic Questions</b> 
           <p>
@@ -396,6 +397,7 @@
           </div>
         </div>
 
+        <!-- error analysis -->
         <ul>
           <li><b>Error Analysis in Procedural Diagnosis</b> 
           <p>
@@ -411,6 +413,24 @@
           </div>
         </div>
         
+        <!-- transferability -->
+        <ul>
+          <li><b>Transferability of Domain Expertise</b> 
+          <p>
+            CheXagent, a model trained exclusively on chest X-rays images, performs best in detecting abnormalities and identifying conditions/findings among all seven models when tested on chest X-ray images. We conducted a finer-grained analysis to explore whether the model's expertise in identifying features of a particular organ can be transferred to other imaging modalities.
+          </p>
+          <p>
+            CheXagent achieves significantly higher accuracy in identifying chestrelated features compared to other organs as well as demonstrating higher accuracy in identifying conditions and findings in CT scans and MRIs of the chest compared with other organs within the same unseen modality. This indicates that specialized knowledge gained on chest X-rays can be transferred to other imaging modalities of the same organ in a zero-shot manner, highlighting the potential for cross-modality expertise transfer in real-life medical imaging diagnostics.
+          </p>
+          </li>
+        </ul>
+        <div class="box m-5">
+          <div class="content has-text-centered">
+            <img src="./static/images/transfer.png" alt="error" width="60%"/>
+            <p>
+              Accuracy comparison of CheXagent in identifying organs and conditions/findings across different modalities. The model demonstrates significantly higher accuracy in identifying organs on chest images compared to images of other organs for both MRI and CT scans. Additionally, CheXagent shows improved accuracy in identifying conditions/findings on chest images, indicating the transferability of its specialized knowledge from chest X-ray training to other imaging modalities.</p>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -431,20 +451,6 @@
   </div>
 </section>
 
-<section>
-  <div class="section" id="org-banners" style="display:flex">
-    <a href="https://www.ucla.edu/" target="_blank" rel="external">
-        <img class="center-block org-banner" src="static/images/ucla.png">
-    </a>
-    <a href="https://www.washington.edu/" target="blank" class="ext-link">
-        <img class="center-block org-banner" src="static/images/uw.png">
-    </a>
-    <a href="https://www.microsoft.com/en-us/research/" target="_blank" rel="external">
-        <img class="center-block org-banner" src="static/images/microsoft.png">
-    </a>
-  </div>
-</section>
-
 
 <footer class="footer">
   <!-- <div class="container"> -->
@@ -454,7 +460,7 @@
       <div class="column is-8">
         <div class="content">
           <p>
-            This website is website adapted from <a href="https://nerfies.github.io/">Nerfies</a>, licensed under a <a rel="license"
+            This website is website adapted from <a href="https://nerfies.github.io/">Nerfies</a>, and <a href="https://mathvista.github.io/">MathVista</a>licensed under a <a rel="license"
                                                 href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
             Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
