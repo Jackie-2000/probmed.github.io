@@ -427,14 +427,12 @@
 </section> -->
 
 <!-- DATASET SECTION -->
+
 <section class="hero is-light is-small">
   <div class="hero-body has-text-centered">
-  <h1 class="title is-1 probmed">
-    <span class="probmed" style="vertical-align: middle">ProbMed Benchmark</span>
-  </h1>
+    <h1 class="title is-1 mathvista">ProbMed Benchmark</h1>
   </div>
-</section>
-            
+</section>        
 <section class="section">
   <div class="container">
     <div class="columns is-centered has-text-centered">
@@ -482,7 +480,7 @@
 <!-- RESULTS SECTION -->
 <section class="hero is-light is-small">
   <div class="hero-body has-text-centered">
-    <h1 class="title is-1 mathvista">Experiment Results</h1>
+    <h1 class="title is-1 mathvista">Experimental Analysis</h1>
   </div>
 </section>
 
@@ -491,44 +489,32 @@
 
     <div class="columns is-centered m-6">
       <div class="column is-full has-text-centered content">
-        <h2 class="title is-3">Results on Existing Foundation Models</h2>
-        <!-- <p>One example for each reasoning skill required in <span class="mathvista">MathVista</span></p> -->
+        <h2 class="title is-3">Is Current Evaluation of LMMs for Med-VQA Reliable?</h2>
+        <ul>
+          <li><b>Probing Evaluation with Adversarial Pairs in VQA-RAD</b> 
+          <p>
+            We construct adversarial pairs for 118 test instances where the answer is "yes" out of 272 closed-ended question-answers pairs within the test set of an existing benchmark. Each adversarial pair was manually created such that, based on the limited information from the original question-answer pair, the answer to the adversarial question had to be negated. This process resulted in 236 question-answer pairs in total. The adversarial questions in this subset are less challenging than those in ProbMed, as they often involve a simple semantic negation of the original question due to limited information.
+          </p>
+          <p>
+            The results reveal the significant impact of adversarial pairs on model performance. Although the original accuracy appears very high for some underperforming models, the accuracy drops drastically after balancing the subset with adversarial pairs: 6.78% for GPT-4V and 16.95% for Gemini Pro, with an average decrease of <b>42.7%</b> across the tested models.
+          </p>
+          </li><b> Probing Evaluation with Adversarial Pairs in ProbMed</b>
+          <p>
+            Similar significant impact of adversarial pairs are observed in ProbMed. The accuracy of more capable models is generally less affected by the introduction of challenging adversarial pairs. However, even the most robust models experience <b>a minimum drop of 10.52%</b> in accuracy when tested with ProbMed's challenging questions, with an average decrease of <b>44.7%</b> across the tested models, highlighting the critical role of probing evaluation in evaluating Med-VQA performance comprehensively.
+          </p></li>
+        </ul>
         <div id="results-carousel" class="carousel results-carousel">
           <div class="box m-5">
             <div class="content has-text-centered">
-              <img src="static/images/results-figures/score_leaderboard_gpt4v.png" alt="grade-lv" width="60%"/>
-              <p>Accuracy scores of primary baselines on the testmini subset (1,000 examples) of <img src="static/images/mathvista.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
-                <span class="mathvista">MathVista</span>. 
-                <br>
-                Both CoT GPT-4 and PoT GPT-4 are augmented with Bard captions and OCR text.</p>
+              <img src="static/images/results_adv_RAD.png" alt="grade-lv" width="70%"/>
+              <p>Model accuracy on the VQA-RAD test subset before and after introducing adversarial pairs. The table demonstrates the significant drop in accuracy across various models when adversarial pairs are added, highlighting the models' vulnerabilities to adversarial questions. The percentage decrease in accuracy is noted in parentheses.</p>
             </div>
           </div>
           <div class="box m-5">
             <div class="content has-text-centered">
-              <img src="static/images/results-figures/bard_error.png" alt="grade-lv" width="70%"/>
+              <img src="static/images/results_adv_probmed.png" alt="grade-lv" width="70%"/>
               <p>
-                Error analysis of Bard results: (a) presents errors in answers and explanations; <br>
-                (b) delves into the details of wrong explanations. <br>
-                Notations: “Answer” is “Ans.”, “Explanation” is “Exp.”, “Partially Correct” is “Partial”, <br>
-                and “Not applicable” refers to unanswerable or indeterminate cases.</p>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/results-figures/grade-lv.png" alt="grade-lv" width="90%"/>
-              <p>Average accuracy scores across different grade levels for leading foundation models</p>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/results-figures/contexts.png" alt="contexts" width="90%"/>
-              <p>Accuracy scores of leading baselines across various visual contexts</p>
-            </div>
-          </div>
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/results-figures/ablation.png" alt="geometric reasoning" width="90%"/>
-              <p>Average accuracy scores of LLM baselines under various visual inputs</p>
+                The impact of adversarial pairs on model accuracy in ProbMed. This table illustrates the performance change of models with the introduction of adversarial pairs. The results indicate a substantial decline in accuracy, underlining the robustness of ProbMed in challenging LMMs. The percentage drop in accuracy is noted in parentheses.</p>
             </div>
           </div>
         </div>
@@ -537,7 +523,7 @@
 
     <div class="columns is-centered m-6">
       <div class="column is-full has-text-centered content">
-        <h2 class="title is-3">Visualization Examples</h2>
+        <h2 class="title is-3"> How Reliable Are LMMs in Medical Diagnosis?</h2>
         <div id="results-carousel" class="carousel results-carousel">
           <div class="box m-5">
             <div class="content has-text-centered">
