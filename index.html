@@ -262,13 +262,13 @@
         <div id="results-carousel" class="carousel results-carousel">
           <div class="box m-5">
             <div class="content has-text-centered">
-              <img src="static/images/results_adv_RAD.png" alt="grade-lv" width="70%"/>
+              <img src="static/images/results_adv_RAD.png" alt="grade-lv" width="60%"/>
               <p>Model accuracy on the VQA-RAD test subset before and after introducing adversarial pairs. The table demonstrates the significant drop in accuracy across various models when adversarial pairs are added, highlighting the models' vulnerabilities to adversarial questions. The percentage decrease in accuracy is noted in parentheses.</p>
             </div>
           </div>
           <div class="box m-5">
             <div class="content has-text-centered">
-              <img src="static/images/results_adv_probmed.png" alt="grade-lv" width="70%"/>
+              <img src="static/images/results_adv_probmed.png" alt="grade-lv" width="60%"/>
               <p>
                 The impact of adversarial pairs on model accuracy in ProbMed. This table illustrates the performance change of models with the introduction of adversarial pairs. The results indicate a substantial decline in accuracy, underlining the robustness of ProbMed in challenging LMMs. The percentage drop in accuracy is noted in parentheses.</p>
             </div>
@@ -282,7 +282,16 @@
     <!-- procedural eval -->
     <div class="columns is-centered">
       <div class="column is-full has-text-centered content">
-        <h2 class="title is-3" id="leaderboard_test">Leaderboard on test</h2>
+        <h2 class="title is-3" id="rq2"> How Reliable Are LMMs in Medical Diagnosis?</h2>
+        <ul>
+          <li><b>Performance across Diagnostic Questions</b> 
+          <p>
+            After correcting model accuracy by introducing adversarial pairs, we continued to address the second research question and conducted diagnostic probing ranging from general to specialized diagnostic questions using the ProbMed dataset.
+          </p>
+          <p>
+            While GPT-4V and Gemini Pro outperform other models and excel in general tasks such as recognizing image modality and organs, their low performance in specialized tasks like determining the existence of abnormalities and answering fine-grained questions about condition/finding and position highlights a significant gap in their ability to aid in real-life diagnosis.
+          </p></li>
+        </ul>
         <div class="content">
           <p class="mt-3"> Categorical and overall accuracy (%) of different models aggregated among all image types in ProbMed. The best result in each question category is in-bold, and the second best is underlined.
           </p>
@@ -302,19 +311,19 @@
               <td>1</td>
               <td><b class="">GPT-4V</b></td>
               <td><a href="https://openai.com/index/gpt-4v-system-card/" class="ext-link" style="font-size: 16px;">Link</a></td>
-              <td>92.50</td>
+              <td><u>92.50</u></td>
               <td>71.71</td>
               <td>53.30</td>
-              <td>35.19</td>
-              <td>22.32</td>         
+              <td><u>35.19</u></td>
+              <td><u>22.32</u></td>         
             </tr>
             <tr>
               <td>2</td>
               <td><b class="">Gemini</b></td>
               <td><a href="https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf" class="ext-link" style="font-size: 16px;">Link</a></td>
-              <td>96.47</td>
+              <td><b>96.47</b></td>
               <td>75.69</td>
-              <td>62.59</td>
+              <td><u>62.59</u></td>
               <td>27.92</td>
               <td>17.17</td>            
             </tr>
@@ -324,7 +333,7 @@
               <td><a href="https://github.com/Stanford-AIMI/CheXagent" class="ext-link" style="font-size: 16px;">Link</a></td>
               <td>37.26</td>
               <td>33.96</td>
-              <td>73.32</td>
+              <td><b>73.32</b></td>
               <td>28.53</td>
               <td>7.24</td>                    
             </tr>
@@ -343,7 +352,7 @@
               <td><b class="">MiniGPT-v2</b></td>
               <td><a href="https://github.com/Vision-CAIR/MiniGPT-4/tree/main" class="ext-link" style="font-size: 16px;">Link</a></td>
               <td>3.25</td>
-              <td>76.29</td>
+              <td><u>76.29</u></td>
               <td>50.09</td>
               <td>15.23</td>
               <td>8.05</td>                  
@@ -353,7 +362,7 @@
               <td><b class="">LLaVA-v1.6 (7B)</b></td>
               <td><a href="https://github.com/haotian-liu/LLaVA" class="ext-link" style="font-size: 16px;">Link</a></td>
               <td>6.77</td>
-              <td>80.70</td>
+              <td><b>80.70</b></td>
               <td>46.18</td>
               <td>3.57</td>
               <td>1.07</td>       
@@ -375,8 +384,8 @@
               <td>25.00</td>
               <td>25.00</td>
               <td>50.00</td>
-              <td>35.67</td>
-              <td>36.48</td>                                
+              <td><b>35.67</b></td>
+              <td><b>36.48</b></td>                                
             </tr>                                                      
           </table>
 
