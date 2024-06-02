@@ -239,6 +239,7 @@
 
 <section class="section">
   <div class="container">
+    <!-- adversarial eval -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Is Current Evaluation of LMMs for Med-VQA Reliable?</h2>
@@ -278,13 +279,12 @@
       </div>
     </div>
 
-    <div class="columns is-centered has-text-centered">
-      <h2 class="title is-3"> How Reliable Are LMMs in Medical Diagnosis?</h2>
-      <div class="content has-text-justified">
-        <h2 class="title is-3" id="leaderboard_test">Leaderboard on ProbMed</h2>
+    <!-- procedural eval -->
+    <div class="columns is-centered">
+      <div class="column is-full has-text-centered content">
+        <h2 class="title is-3" id="leaderboard_test">Leaderboard on test</h2>
         <div class="content">
-          <p class="mt-3">Accuracy scores on the <b>test</b> subset (5,141 examples with <b>private</b> ground truth) of <img src="static/images/mathvista.png" style="width:1.0em;vertical-align: middle" alt="Logo"/>
-            <span class="mathvista">MathVista</span>.
+          <p class="mt-3"> Categorical and overall accuracy (%) of different models aggregated among all image types in ProbMed. The best result in each question category is in-bold, and the second best is underlined.
           </p>
 
           <table class="js-sort-table" id="results">
@@ -488,7 +488,7 @@
               <td>15.8</td>
               <td>14.3</td>                                                  
             </tr>                                                      
-        </table>
+          </table>
 
           <b>Human Performance*:</b> Average human performance from AMT annotators who have high school diplomas or above.
           <br>
@@ -516,9 +516,9 @@
           </p>
           </div>
         </div>
-        
       </div>
     </div>
+
   </div>
 </section>
 
