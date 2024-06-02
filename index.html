@@ -441,17 +441,18 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Overview</h2>
         <div class="content has-text-justified">
-          <h2 class="title is-3">Research questions:</h2>
-          <ul>
-            <li><b>Is the current evaluation of LMMs for Med-VQA reliable?</b> </li>
-            <li><b>How reliable are LMMs on medical diagnosis, ranging from general questions to specialized diagnostic questions?</b></li>
-          </ul>
           <p>
             ProbMed draws from two comprehensive biomedical datasets MedICaT and ChestX-ray14 to compile a diverse set of <b>6,303 images</b>. These images span three modalities (X-ray, MRI, and CT scan) and four organs (abdomen, brain, chest, and spine). After preprocessing, we generated a diverse set of high-quality questions for each image, covering various diagnostic dimensions. This process resulted in a total of <b>57,132 question-answer pairs</b>, averaging 9 pairs per image.
           </p>
           <ul>
-            <li>One of the main motivations behind ProbMed is to assess the models' ability to accurately distinguish between relevant and irrelevant features. ProbMed pairs original questions with negation questions containing hallucinated attributes. This method challenges the model robustness by requiring them to identify true conditions while disregarding false, hallucinated ones. For instance, a question about a specific finding is paired with a negated question featuring a different, non-existent finding to test if the model can exclusively identify the true finding. </li>
-            <li>To ensure a comprehensive evaluation, ProbMed includes questions that require reasoning across multiple diagnostic dimensions for each image. These dimensions include modality recognition, organ identification, clinical findings, abnormalities, and positional reasoning. This multifaceted approach assesses a model's diagnostic capabilities beyond simple question-answer pairs, requiring it to integrate various pieces of information to form a coherent diagnostic picture.</li>
+            <li><b>Is the current evaluation of LMMs for Med-VQA reliable?</b> 
+            <p>
+              One of the main motivations behind ProbMed is to assess the models' ability to accurately distinguish between relevant and irrelevant features. ProbMed pairs original questions with negation questions containing hallucinated attributes. This method challenges the model robustness by requiring them to identify true conditions while disregarding false, hallucinated ones. For instance, a question about a specific finding is paired with a negated question featuring a different, non-existent finding to test if the model can exclusively identify the true finding.
+            </p></li>
+            <li><b>How reliable are LMMs on medical diagnosis, ranging from general questions to specialized diagnostic questions?</b>
+            <p>
+              To ensure a comprehensive evaluation, ProbMed includes questions that require reasoning across multiple diagnostic dimensions for each image. These dimensions include modality recognition, organ identification, clinical findings, abnormalities, and positional reasoning. This multifaceted approach assesses a model's diagnostic capabilities beyond simple question-answer pairs, requiring it to integrate various pieces of information to form a coherent diagnostic picture.
+            </p></li>
           </ul>
 
           <div id="results-carousel" class="carousel results-carousel">
@@ -463,7 +464,7 @@
             </div>
             <div class="box m-5">
               <div class="content has-text-centered">
-                <img src="static/images/table_stats.png" alt="arithmetic reasoning" width="50%"/>
+                <img src="static/images/table_stats.png" alt="arithmetic reasoning" width="80%"/>
                 <p> Dataset Statistics of ProbMed. There are 6.3k images and 57k VQA pairs in total. The dataset is balanced within each question type and image type. </p>
               </div>
             </div>
