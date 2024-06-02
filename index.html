@@ -490,19 +490,21 @@
     <div class="columns is-centered m-6">
       <div class="column is-full has-text-centered content">
         <h2 class="title is-3">Is Current Evaluation of LMMs for Med-VQA Reliable?</h2>
-        <ul>
-          <li><b>Probing Evaluation with Adversarial Pairs in VQA-RAD</b> 
-          <p>
-            We construct adversarial pairs for 118 test instances where the answer is "yes" out of 272 closed-ended question-answers pairs within the test set of an existing benchmark. Each adversarial pair was manually created such that, based on the limited information from the original question-answer pair, the answer to the adversarial question had to be negated. This process resulted in 236 question-answer pairs in total. The adversarial questions in this subset are less challenging than those in ProbMed, as they often involve a simple semantic negation of the original question due to limited information.
-          </p>
-          <p>
-            The results reveal the significant impact of adversarial pairs on model performance. Although the original accuracy appears very high for some underperforming models, the accuracy drops drastically after balancing the subset with adversarial pairs: 6.78% for GPT-4V and 16.95% for Gemini Pro, with an average decrease of <b>42.7%</b> across the tested models.
-          </p>
-          </li><b> Probing Evaluation with Adversarial Pairs in ProbMed</b>
-          <p>
-            Similar significant impact of adversarial pairs are observed in ProbMed. The accuracy of more capable models is generally less affected by the introduction of challenging adversarial pairs. However, even the most robust models experience <b>a minimum drop of 10.52%</b> in accuracy when tested with ProbMed's challenging questions, with an average decrease of <b>44.7%</b> across the tested models, highlighting the critical role of probing evaluation in evaluating Med-VQA performance comprehensively.
-          </p></li>
-        </ul>
+        <div class="content has-text-justified">
+          <ul>
+            <li><b>Probing Evaluation with Adversarial Pairs in VQA-RAD</b> 
+            <p>
+              We construct adversarial pairs for 118 test instances where the answer is "yes" out of 272 closed-ended question-answers pairs within the test set of an existing benchmark. Each adversarial pair was manually created such that, based on the limited information from the original question-answer pair, the answer to the adversarial question had to be negated. This process resulted in 236 question-answer pairs in total. The adversarial questions in this subset are less challenging than those in ProbMed, as they often involve a simple semantic negation of the original question due to limited information.
+            </p>
+            <p>
+              The results reveal the significant impact of adversarial pairs on model performance. Although the original accuracy appears very high for some underperforming models, the accuracy drops drastically after balancing the subset with adversarial pairs: 6.78% for GPT-4V and 16.95% for Gemini Pro, with an average decrease of <b>42.7%</b> across the tested models.
+            </p></li>
+            </li><b> Probing Evaluation with Adversarial Pairs in ProbMed</b>
+            <p>
+              Similar significant impact of adversarial pairs are observed in ProbMed. The accuracy of more capable models is generally less affected by the introduction of challenging adversarial pairs. However, even the most robust models experience <b>a minimum drop of 10.52%</b> in accuracy when tested with ProbMed's challenging questions, with an average decrease of <b>44.7%</b> across the tested models, highlighting the critical role of probing evaluation in evaluating Med-VQA performance comprehensively.
+            </p></li>
+          </ul>
+        </div>
         <div id="results-carousel" class="carousel results-carousel">
           <div class="box m-5">
             <div class="content has-text-centered">
