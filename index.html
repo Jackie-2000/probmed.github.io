@@ -164,13 +164,13 @@
         <h2 class="title is-3">Introduction</h2>
         <div class="content has-text-justified">
           <p>
-            Large Multimodal Models (LMMs) have shown remarkable progress in the field of medical Visual Question Answering (Med-VQA), achieving high accuracy on existing benchmarks. However, their reliability under robust evaluation is questionable. This study reveals that state-of-the-art models, when subjected to simple probing evaluation, perform worse than random guessing on medical diagnosis questions. 
+            Large Multimodal Models (LMMs) have shown remarkable progress in medical Visual Question Answering (Med-VQA), achieving high accuracy on existing benchmarks. However, their reliability under robust evaluation is questionable. This study reveals that when subjected to simple probing evaluation, state-of-the-art models perform worse than random guessing on medical diagnosis questions. 
           </p>
           <p>
             To address this critical evaluation problem, we introduce the <b>Probing Evaluation for Medical Diagnosis (ProbMed)</b> dataset to rigorously assess LMM performance in medical imaging through <b>probing evaluation</b> and <b>procedural diagnosis</b>. Particularly, probing evaluation features pairing original questions with negation questions with hallucinated attributes, while procedural diagnosis requires reasoning across various diagnostic dimensions for each image, including modality recognition, organ identification, clinical findings, abnormalities, and positional grounding. 
           </p>
           <p>
-            Our evaluation reveals that top-performing models like GPT-4V and Gemini Pro perform worse than random guessing on specialized diagnostic questions, indicating significant limitations in handling fine-grained medical inquiries. Besides, models like LLaVA-Med struggle even with more general questions, and results from CheXagent demonstrate the transferability of expertise across different modalities of the same organ, showing that specialized domain knowledge is still crucial for improving performance. This study underscores the urgent need for more robust evaluation to ensure the reliability of LMMs in critical fields like medical diagnosis, and current LMMs are still far from applicable to those fields.
+            Our evaluation reveals that top-performing models like GPT-4o, GPT-4V and Gemini Pro perform worse than random guessing on specialized diagnostic questions, indicating significant limitations in handling fine-grained medical inquiries. Besides, models like LLaVA-Med struggle even with more general questions, and results from CheXagent demonstrate the transferability of expertise across different modalities of the same organ, showing that specialized domain knowledge is still crucial for improving performance. This study underscores the urgent need for more robust evaluation to ensure the reliability of LMMs in critical fields like medical diagnosis, and current LMMs are still far from applicable to those fields.
           </p>
         </div>
       </div>
@@ -270,7 +270,7 @@
             <div class="content has-text-centered">
               <img src="static/images/results_adv_probmed.png" alt="grade-lv" width="60%"/>
               <p>
-                The impact of adversarial pairs on model accuracy in ProbMed. This table illustrates the performance change of models with the introduction of adversarial pairs. The results indicate a substantial decline in accuracy, underlining the robustness of ProbMed in challenging LMMs. The percentage drop in accuracy is noted in parentheses.</p>
+                Model accuracy after adding adversarial pairs to all question types except for abnormality in ProbMed. The results indicate a substantial decline in accuracy, underlining the robustness of ProbMed in challenging LMMs. The percentage drop in accuracy is noted in parentheses.</p>
             </div>
           </div>
         </div>
@@ -291,7 +291,7 @@
             After correcting model accuracy by introducing adversarial pairs, we continued to address the second research question and conducted diagnostic probing ranging from general to specialized diagnostic questions using the ProbMed dataset.
           </p>
           <p>
-            While GPT-4V and Gemini Pro outperform other models and excel in general tasks such as recognizing image modality and organs, their low performance in specialized tasks like determining the existence of abnormalities and answering fine-grained questions about condition/finding and position highlights a significant gap in their ability to aid in real-life diagnosis.
+            While GPT-4o, GPT-4V, and Gemini Pro outperform other models and excel in general tasks such as recognizing image modality and organs, their low performance in specialized tasks like determining the existence of abnormalities and answering fine-grained questions about condition/finding and position highlights a significant gap in their ability to aid in real-life diagnosis.
           </p></li>
         </ul>
         <div class="content">
@@ -303,6 +303,7 @@
                 <td class="js-sort-number"><strong>#</strong></td>
                 <td class="js-sort-number"><strong>Model</strong></td>
                 <td class="js-sort-number"><strong>Source</strong></td>
+                <td class="js-sort-number"><strong>Overall</strong></td>
                 <td class="js-sort-number"><strong>Modality</strong></td>
                 <td class="js-sort-number"><strong>Organ</strong></td>
                 <td class="js-sort-number"><strong>Abnormality</strong></td>
@@ -311,36 +312,72 @@
             </tr>
             <tr>
               <td>1</td>
-              <td><b class="">GPT-4V</b></td>
-              <td><a href="https://openai.com/index/gpt-4v-system-card/" class="ext-link" style="font-size: 16px;">Link</a></td>
-              <td><u>92.50</u></td>
-              <td>71.71</td>
-              <td>53.30</td>
-              <td><u>35.19</u></td>
-              <td><u>22.32</u></td>         
+              <td><b class="">GPT-4o</b></td>
+              <td><a href="https://openai.com/index/hello-gpt-4o/" class="ext-link" style="font-size: 16px;">Link</a></td>
+              <td><b>55.60</b></td>
+              <td><b>97.42</b></td>
+              <td>69.46</td>
+              <td>61.97</td>
+              <td><u>29.30</u></td>
+              <td><b>24.06</b></td>         
             </tr>
             <tr>
               <td>2</td>
-              <td><b class="">Gemini 1.5 Pro</b></td>
-              <td><a href="https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf" class="ext-link" style="font-size: 16px;">Link</a></td>
-              <td><b>96.47</b></td>
-              <td>75.69</td>
-              <td><u>62.59</u></td>
-              <td>27.92</td>
-              <td>17.17</td>            
+              <td><b class="">GPT-4V</b></td>
+              <td><a href="https://openai.com/index/gpt-4v-system-card/" class="ext-link" style="font-size: 16px;">Link</a></td>
+              <td><u>55.28</u></td>
+              <td>92.51</td>
+              <td>71.73</td>
+              <td>53.30</td>
+              <td><u>35.19</u></td>
+              <td><u>22.40</u></td>         
             </tr>
             <tr>
               <td>3</td>
-              <td><b class="">CheXagent</b></td>
-              <td><a href="https://github.com/Stanford-AIMI/CheXagent" class="ext-link" style="font-size: 16px;">Link</a></td>
-              <td>37.26</td>
-              <td>33.96</td>
-              <td><b>73.32</b></td>
-              <td>28.53</td>
-              <td>7.24</td>                    
+              <td><b class="">Gemini 1.5 Pro</b></td>
+              <td><a href="https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf" class="ext-link" style="font-size: 16px;">Link</a></td>
+              <td>55.08</td>
+              <td><u>96.47</u></td>
+              <td>75.69</td>
+              <td><u>62.59</u></td>
+              <td>27.93</td>
+              <td>17.54</td>            
             </tr>
             <tr>
               <td>4</td>
+              <td><b class="">Med-Flamingo</b></td>
+              <td><a href="https://github.com/snap-stanford/med-flamingo" class="ext-link" style="font-size: 16px;">Link</a></td>
+              <td>35.66</td>
+              <td>44.15</td>
+              <td>61.39</td>
+              <td>50.00</td>
+              <td>26.33</td>
+              <td>5.65</td>                    
+            </tr>
+            <tr>
+              <td>5</td>
+              <td><b class="">CheXagent</b></td>
+              <td><a href="https://github.com/Stanford-AIMI/CheXagent" class="ext-link" style="font-size: 16px;">Link</a></td>
+              <td>30.61</td>
+              <td>37.25</td>
+              <td>33.95</td>
+              <td><b>73.31</b></td>
+              <td>28.52</td>
+              <td>7.48</td>                    
+            </tr>
+            <tr>
+              <td>6</td>
+              <td><b class="">BiomedGPT</b></td>
+              <td><a href="https://github.com/taokz/BiomedGPT" class="ext-link" style="font-size: 16px;">Link</a></td>
+              <td>33.34</td>
+              <td>60.25</td>
+              <td>46.81</td>
+              <td>50.31</td>
+              <td>14.13</td>
+              <td>6.11</td>                    
+            </tr>
+            <tr>
+              <td>7</td>
               <td><b class="">LLaVA-Med</b></td>
               <td><a href="https://github.com/microsoft/LLaVA-Med" class="ext-link" style="font-size: 16px;">Link</a></td>
               <td>5.49</td>
@@ -350,7 +387,7 @@
               <td>5.37</td>               
             </tr>
             <tr>
-              <td>5</td>
+              <td>8</td>
               <td><b class="">MiniGPT-v2</b></td>
               <td><a href="https://github.com/Vision-CAIR/MiniGPT-4/tree/main" class="ext-link" style="font-size: 16px;">Link</a></td>
               <td>3.25</td>
@@ -360,7 +397,7 @@
               <td>8.05</td>                  
             </tr>
             <tr>
-              <td>6</td>
+              <td>9</td>
               <td><b class="">LLaVA-v1.6 (7B)</b></td>
               <td><a href="https://github.com/haotian-liu/LLaVA" class="ext-link" style="font-size: 16px;">Link</a></td>
               <td>6.77</td>
@@ -370,7 +407,7 @@
               <td>1.07</td>       
             </tr>
             <tr>
-              <td>7</td>
+              <td>10</td>
               <td><b>LLaVA-v1 (7B)</b></td>
               <td><a href="https://github.com/haotian-liu/LLaVA" class="ext-link" style="font-size: 16px;">Link</a></td>
               <td>25.28</td>
